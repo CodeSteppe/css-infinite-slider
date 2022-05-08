@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.slider {
+  display: flex;
+  /* part2 */
+  position: relative;
+  animation: loop 20s 2s ease-out infinite;
+}
+
+.slide {
+  position: relative;
+  height: 100vh;
+  flex-basis: 100vw;
+  flex-shrink: 0;
+  border: 1px solid #000;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-size: 14vh;
+  width: 24vh;
+  height: 24vh;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.slide:nth-child(1),
+.slide:nth-child(6) {
+  background-image: url("https://source.unsplash.com/random/1920×1080/?sky");
+}
+.slide:nth-child(2) {
+  background-image: url("https://source.unsplash.com/random/1920×1080/?ocean");
+}
+.slide:nth-child(3) {
+  background-image: url("https://source.unsplash.com/random/1920×1080/?forest");
+}
+.slide:nth-child(4) {
+  background-image: url("https://source.unsplash.com/random/1920×1080/?grassland");
+}
+.slide:nth-child(5) {
+  background-image: url("https://source.unsplash.com/random/1920×1080/?stars");
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  5%,
+  20% {
+    transform: translateX(-100vw);
+  }
+  25%,
+  40% {
+    transform: translateX(-200vw);
+  }
+  45%,
+  60% {
+    transform: translateX(-300vw);
+  }
+  65%,
+  80% {
+    transform: translateX(-400vw);
+  }
+  85%,
+  100% {
+    transform: translateX(-500vw);
+  }
+}
